@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-    <mainLoginForm/>
+    <!-- <mainLoginForm/> -->
+    <sidebar/>
   </div>
 </template>
 
 <script>
-import mainLoginForm from './components/Forms/Login/mainLoginForm.vue'
+// import mainLoginForm from './components/Forms/Login/mainLoginForm.vue'
+import sidebar from './components/sidebar/SideBar.vue'
 export default {
   name: "app",
   components:{
-      mainLoginForm
+      //mainLoginForm,
+      sidebar
     }
 }
 </script>
