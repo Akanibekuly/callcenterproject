@@ -1,15 +1,15 @@
 <template>
     <div id="sidebar">
-       <side-bar-item v-bind:sideBarItems="navItems" v-bind:toggle="toggle"/> 
+       <TheSideBarItems :sideBarItems="navItems" :toggle="toggle"/> 
     </div>
 </template>
 
 <script>
-import sideBarItem from './sideBarItem.vue'
+import TheSideBarItems from '../components/TheSideBarItems'
 export default {
-    name: "sidebar",
+    name: "SideBar",
     components: {
-        sideBarItem
+        TheSideBarItems
     }, 
     data() {
         return {

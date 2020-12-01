@@ -1,6 +1,6 @@
 <template>
     <div id="main">
-        <span style="font-size:30px;cursor:pointer" :class="{ main: toggle}" @click="navigate">&#9776; open</span>
+        <span style="font-size:30px;cursor:pointer" :class="{ main: toggle }" @click="navigate">&#9776;</span>
         <div id="mySideNav" class="sidenav" :class="{ openClass: toggle }">
             <div  v-for = "(item, index) in sideBarItems" :key="index" >
               <h2> <a href=""> {{ item.value }} </a></h2>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    name: "sideBarItem",
+    name: "TheSideBarItems",
     props: ["sideBarItems", "toggle"],
     methods: {
       navigate(){
