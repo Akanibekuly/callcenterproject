@@ -33,7 +33,7 @@ export default {
                 value: "Contact",
                 url: "/contact"
             }],
-            toggle: true
+            toggle: false
         }
     }
 }

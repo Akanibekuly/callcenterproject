@@ -3,8 +3,10 @@
         <h1 class="center">Login Form {{ language }}</h1>
         <h3 v-show="error"> Uncorrect e-mail or password </h3>
         <form>
-            <input class="center" type="text" v-model="email" name="email" placeholder="Email or Username">
-            <input class="center" type="password" v-model="password" name="password" placeholder="Password">
+            <i class="far fa-user fa-2x"></i> 
+            <input class="center " type="text" v-model="email" name="email" placeholder="Email or Username">
+            <i class="fas fa-unlock fa-2x"></i>
+            <input class="center password" type="password" v-model="password" name="password" placeholder="Password">
             <button class = "center" type="submit" @click.prevent="test">Login</button>
             <div class="center bot">
                 <h3 ><a href=""><span>Password Reset</span></a> or <a href=""><span>Sign In</span></a> </h3>
@@ -14,6 +16,7 @@
 </template>
 
 <script>
+
 export default {
     name: "LoginForm",
     props: ["language", "error"],
@@ -40,17 +43,22 @@ export default {
 <style scoped>
 
 #content {
+    position: reletive;
     width: 350px;
     border: 1px solid;
     border-radius: 20px;
 }
 
 input {
-    width: 90%;
+    width: 250px;
     border-radius: 10px;
     border: 1px gray solid;
     height: 30px;
-    display: block;
+    position: relative;
+    left: 30px;
+    display: inline;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 button {
@@ -59,6 +67,8 @@ button {
     display: block;
     border-radius: 10px;
     border: 1px gray solid;
+    font-size: 20px;
+    font-weight: bold;
 }
 .center {
     margin: auto;
@@ -71,5 +81,21 @@ button {
 }
 h1, h3 {
     text-align: center;
+}
+.fas {
+    display: inline;
+    position: relative;
+    left: -280px;
+    top: 65px;
+}
+.far {
+    display: inline;
+    position: relative;
+    left: 20px;
+    top: 10px;
+}
+.password {
+    position: relative;
+    left: 57px;
 }
 </style>

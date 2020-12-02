@@ -6,6 +6,7 @@
 </template>
 
 <script>
+
 // @ is an alias to /src
 import Login from '@/views/Login'
 import SideBar from '../views/SideBar'
