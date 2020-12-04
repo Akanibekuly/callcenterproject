@@ -1,58 +1,63 @@
 <template>
-    <div id="main">
-        <span style="font-size:30px;cursor:pointer" :class="{ main: toggle }" @click="navigate">&#9776;</span>
-        <div id="mySideNav" class="sidenav" :class="{ openClass: toggle }">
-            <div  v-for = "(item, index) in sideBarItems" :key="index" >
-              <h2> <a href=""> {{ item.value }} </a></h2>
-            </div>
+    <div class="mainSideBar">
+        <div class="logo">
+            <h1>ЕКЦ</h1>
         </div>
+        <div class="nav-menu">
+            <div class="nav-menu-item" v-for=" item in sideBarItems" :key="item.id">
+                <router-link class="link" :to="item.url"> <font-awesome-icon :icon="['fas', item.icon ]" /> <span>{{ item.value }}</span>  </router-link> 
+            </div>    
+        </div>
+        
     </div>
 </template>
 
 <script>
 export default {
-    name: "TheSideBarItems",
-    props: ["sideBarItems", "toggle"],
-    methods: {
-      navigate(){
-        this.toggle = !this.toggle
-      }
-    }
+    name: "TheSideBar",
+    props:["sideBarItems"]  
 }
 </script>
 
-
 <style scoped>
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
+span {
+    padding-left: 10px;
 }
-
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+.link {
+    text-decoration: none;
 }
-.sidenav a:hover {
-  color: #f1f1f1;
+.router-link-exact-active {
+    color: gray;
 }
-
-.openClass {
-    width: 250px;
+.nav-menu {
+    display: flex; 
+    height: 50vh;
+    flex-direction: column;
 }
-.main {
-  margin-left: 250px;
+.nav-menu-item {
+    position:relative;
+    padding: 10px;
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 5px;
+    font-size: 15px;
+}
+.nav-menu-item:hover {
+    background-color: #19B394;
+    font-size: 20px;
+}
+.mainSideBar {
+    width: 13vw;
+    height: 100vh;
+    display: inline-block;
+    box-shadow: 2px 2px 2px #aaaaaa;
+}
+.logo {
+    color: #fff;
+    background-color: #19B394;
+    height: 75px;
+    padding: 10px;
+    display: block;
+    padding-left: 40px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div id="sidebar">
-       <TheSideBarItems :sideBarItems="navItems" :toggle="toggle"/> 
+       <TheSideBarItems :sideBarItems="navItems"/> 
     </div>
 </template>
 
@@ -15,26 +15,34 @@ export default {
         return {
             navItems: [{
                 id: 1, 
-                value: "About",
-                url: "/about"
+                value: "Статистика",
+                url: "/",
+                icon: "chart-line"
             },
             {
                 id: 2, 
-                value: "Home",
-                url: "/home"
+                value: "Мониторинг",
+                url: "/",
+                icon: "desktop"
             },
              {
                 id: 3, 
-                value: "Services",
-                url: "/services"
+                value: "Звонки",
+                url: "/",
+                icon: "phone-alt"
             },
              {
                 id: 4, 
-                value: "Contact",
-                url: "/contact"
+                value: "Очереди",
+                url: "/",
+                icon: "users"
             }],
-            toggle: false
         }
     }
 }
 </script>
+<style  scoped>
+#sidebar {
+    display: inline-block;
+}
+</style>
