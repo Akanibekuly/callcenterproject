@@ -6,7 +6,8 @@
       <div class="wrapper">
         <div class="title">
           <h1>
-            <font-awesome-icon :icon="['fas', 'users']" /><strong>Операторы</strong> 
+            <font-awesome-icon :icon="['fas', 'users']" /><strong @click="getData">Операторы</strong> 
+            <TheOperatorTable :operators="operators" :show="show"/>
         </h1>
         </div>
          <div class="title">
@@ -32,12 +33,31 @@
 // import Login from '@/views/Login'
 import SideBar from '../views/SideBar'
 import Header from '@/components/TheHeader'
+import TheOperatorTable from '../components/TheOperatorTable'
+import axios from 'axios'
 
 export default {
   name: 'Statistics',
   components: {
     SideBar,
-    Header
+    Header,
+    TheOperatorTable
+  }, 
+  methods: {
+    getData(){
+       axios.get("http://192.168.209.155:8081/operators").then(res => {
+          this.operators = res.data
+          }).catch(err => {
+              console.log(err)
+          });
+          this.show = !this.show
+    }
+  }, 
+  data(){
+    return {
+      operators:[],
+      show: false
+    }
   }
 }
 </script>

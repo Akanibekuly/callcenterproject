@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <SideBar />
+    <SideBar v-bind:operators="operators"/>
     <Header/>
     <!-- <Login /> -->
   </div>

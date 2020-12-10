@@ -6,7 +6,7 @@
         <div class="nav-menu">
             <div class="nav-menu-item" v-for=" item in sideBarItems" :key="item.id">
                 <router-link class="link" :to="item.url"> <font-awesome-icon :icon="['fas', item.icon ]" /> <span>{{ item.value }}</span>  </router-link> 
-            </div>    
+            </div> 
         </div>
         
     </div>
