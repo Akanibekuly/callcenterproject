@@ -16,7 +16,7 @@ export default {
             navItems: [{
                 id: 1, 
                 value: "Статистика",
-                url: "/",
+                url: "/statistics",
                 icon: "chart-line"
             },
             {

@@ -26,9 +26,10 @@ span {
 .link {
     text-decoration: none;
 }
-.router-link-exact-active {
-    color: gray;
+a {
+    color: var(--text-color);
 }
+
 .nav-menu {
     display: flex; 
     height: 50vh;
