@@ -6,7 +6,7 @@
       <div class="wrapper">
         <div class="title">
           <h1>
-            <font-awesome-icon :icon="['fas', 'chart-line']" /><strong>Статистика</strong> 
+            <font-awesome-icon :icon="['fas', 'users']" /><strong>Операторы</strong> 
         </h1>
         </div>
          <div class="title">

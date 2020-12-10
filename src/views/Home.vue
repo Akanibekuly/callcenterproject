@@ -13,7 +13,6 @@
 import SideBar from '../views/SideBar'
 import Header from '@/components/TheHeader'
 
-
 export default {
   name: 'Home',
   components: {
