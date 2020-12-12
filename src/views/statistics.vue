@@ -64,7 +64,7 @@ export default {
 <style scoped>
 .page-1 {
     width: 85vw;
-    height: 94vh;
+    height: 100%;
     color: var(--text-color);
     margin-top: 10px;
     display: inline-block;

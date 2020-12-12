@@ -1,6 +1,5 @@
 <template>
-  <div style="width: 600px">
-    <div class="table" v-show="show">
+  <div class="table" v-show="show">
         <table>
             <tr>
                 <th>Агент</th>
@@ -25,13 +24,14 @@
                 <td><strong class="red"><font-awesome-icon :icon="['fas', 'phone-slash']" /></strong>
                     <strong class="red">  <font-awesome-icon :icon="['fas', 'user']" /> </strong>
                 {{ operator.MissedByAgentCallsCount }} </td>
+                <button @click="GetMinioInfo">Click</button>
             </tr>
         </table>
     </div>
-  </div>
 </template>
 
 <script>
+var Minio = require('minio')
 export default {
   name: 'TheOperatorTable',
   props:["operators", "show"],
@@ -42,21 +42,44 @@ export default {
     var m = Math.floor(d % 3600 / 60);
     var s = Math.floor(d % 3600 % 60);
     return h +":"+ m +":"+ s; 
-}
+    },
+    GetMinioInfo(){
+      var minioClient = new Minio.Client({
+                        endPoint: '192.168.120.18',
+                        port: 9000,
+                        useSSL: false,
+                        accessKey: 'AKIAIOSFODNN7EXAMPLE',
+                        secretKey: 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'
+          });
+    minioClient.listBuckets(function(err, buckets) {
+      if (err) return console.log(err)
+      console.log('buckets :', buckets)
+    })
+     minioClient.fGetObject('naocalls', '1607661880.3842_7027746404.mp3', '/tmp/photo.jpg', function(err) {
+                if (err) {
+                  return console.log(err)
+                }
+                console.log('success')
+      })
+    }
   }
 }
 
 </script>
 
 <style scoped>
-
+.table {
+  display: flex;
+}
+td, th {
+  width: 100px;
+}
 table {
-  position: relative;
+  margin: auto;
   top: 10px;
   font-family: arial, sans-serif;
   border-collapse: collapse;
   font-size: 12px;
-  width: 80vw;
   color: black;
 }
 strong {
